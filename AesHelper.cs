@@ -1,4 +1,4 @@
-namespace Snippets
+namespace Helpers
 {
     using System;
     using System.Collections.Generic;
