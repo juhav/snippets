@@ -69,7 +69,7 @@ namespace ConsoleForTesting
         }
 
         /// <summary>
-        /// 2019-12-04T12:21:34.668Z
+        /// 2019-12-04T12:21:34.000Z
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
