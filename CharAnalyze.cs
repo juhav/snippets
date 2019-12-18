@@ -1,5 +1,4 @@
-
-        private static void CreateCharTable()
+private static void CreateCharTable()
         {
             var sb = new StringBuilder();
 
@@ -20,6 +19,7 @@
             sb.AppendLine("<th>IsControl</th>");
             sb.AppendLine("<th>IsLetterOrDigit</th>");
             sb.AppendLine("<th>UTF-8</th>");
+            sb.AppendLine("<th>Unicode Category</th>");
             sb.AppendLine("</tr>");
             sb.AppendLine("</thead>");
 
@@ -44,6 +44,10 @@
 
                 sb.Append("<td>");
                 sb.Append(Char.IsLetterOrDigit(c) ? "X" : "");
+                sb.Append("</td>");
+
+                sb.Append("<td>");
+                sb.Append(Char.GetUnicodeCategory(c).ToString());
                 sb.Append("</td>");
 
                 sb.Append("<td>");
