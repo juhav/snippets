@@ -47,10 +47,6 @@ private static void CreateCharTable()
                 sb.Append("</td>");
 
                 sb.Append("<td>");
-                sb.Append(Char.GetUnicodeCategory(c).ToString());
-                sb.Append("</td>");
-
-                sb.Append("<td>");
                 var s = new string(new Char[] { c } );
 
                 var bytes = Encoding.UTF8.GetBytes(s);
@@ -65,6 +61,10 @@ private static void CreateCharTable()
                 }
                 sb.Append("</td>");
 
+                sb.Append("<td>");
+                sb.Append(Char.GetUnicodeCategory(c).ToString());
+                sb.Append("</td>");
+                    
                 sb.Append("</tr>");
             }
 
