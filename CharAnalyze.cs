@@ -1,3 +1,48 @@
+        public static bool IsAllowedChar(char c, out char output)
+        {
+            var category = Char.GetUnicodeCategory(c);
+
+            output = c;
+
+            switch (category)
+            {
+                case UnicodeCategory.UppercaseLetter: return true;
+                case UnicodeCategory.LowercaseLetter: return true;
+                case UnicodeCategory.TitlecaseLetter: return true;
+                case UnicodeCategory.ModifierLetter: return true;
+                case UnicodeCategory.OtherLetter: return false;
+                case UnicodeCategory.NonSpacingMark: return true;
+                case UnicodeCategory.SpacingCombiningMark: return true;
+                case UnicodeCategory.EnclosingMark: return true;
+                case UnicodeCategory.DecimalDigitNumber: return true;
+                case UnicodeCategory.LetterNumber: return true;
+                case UnicodeCategory.OtherNumber: return true;
+                case UnicodeCategory.SpaceSeparator:
+                    output = '\u0020';
+                    return true;
+                case UnicodeCategory.LineSeparator: return false;
+                case UnicodeCategory.ParagraphSeparator: return false;
+                case UnicodeCategory.Control: return false;
+                case UnicodeCategory.Format: return true;
+                case UnicodeCategory.Surrogate: return true;
+                case UnicodeCategory.PrivateUse: return false;
+                case UnicodeCategory.ConnectorPunctuation: return true;
+                case UnicodeCategory.DashPunctuation: return true;
+                case UnicodeCategory.OpenPunctuation: return true;
+                case UnicodeCategory.ClosePunctuation: return true;
+                case UnicodeCategory.InitialQuotePunctuation: return true;
+                case UnicodeCategory.FinalQuotePunctuation: return true;
+                case UnicodeCategory.OtherPunctuation: return true;
+                case UnicodeCategory.MathSymbol: return true;
+                case UnicodeCategory.CurrencySymbol: return true;
+                case UnicodeCategory.ModifierSymbol: return false;
+                case UnicodeCategory.OtherSymbol: return false;
+                case UnicodeCategory.OtherNotAssigned: return false;
+            }
+
+            return false;
+        }
+
 private static void CreateCharTable()
         {
             var sb = new StringBuilder();
